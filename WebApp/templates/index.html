@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %}  {% endblock %}</h1>
+    {% for up in uploads %}
+        <a href=/{{up[0]}}>
+            <h2>Напряжение: {{ up[1] }} В</h2>
+            <h2>Ток: {{ up[2] }} мА</h2>
+        </a>
+        <span class="badge badge-primary">{{ up[3] }}</span>
+        <hr>
+    {% endfor %}
+{% endblock %}

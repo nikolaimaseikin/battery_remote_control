@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{% block title %} {{ upl[0][1] }} {% endblock %}</h2>
+    <span class="badge badge-primary">Напряжение: {{ upl[0][2] }} В</span>
+    {% if float(upl[0][3]) < 0,1 %}
+        <span class="badge badge-primary">Ток: {{upl[0][3] * 1000}} мА</span>
+    {% else %}
+        <span class="badge badge-primary">Ток: {{upl[0][3]}} А</span>
+    {% endif %}
+
+{% endblock %}
